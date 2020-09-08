@@ -1,0 +1,111 @@
+/* Untuk Tablet */
+@media all and (max-width: 990px) 
+{
+  body
+  {
+    font-size: 14px;
+  }
+
+  .login-left, .login-right {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .login-left img {
+    display: none;
+  }
+
+  .features {
+    width: 45%;
+  }
+
+  .reviews, .support {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+
+  .foot-landing {
+    min-height: 430px;
+  }
+
+  .carousel , .carousel-inner , .carousel-item {
+    height: 545px;
+  }
+
+  .foot-right {
+    text-align: left !important;
+  }
+
+  .foot-right a {
+    color: white;
+  }
+
+}
+
+/* Untuk Smartphone */
+@media all and (max-width: 750px) 
+{
+
+  body
+  {
+    font-size: 12px;
+  }
+
+  .carousel-prop-right {
+    display: none;          
+  }
+
+  .carousel , .carousel-inner , .carousel-item {
+    height: 525px;
+  }
+
+  .carousel-prop-left {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .content-header:after {
+    width: 20%;
+  }
+
+}
+
+@media all and (max-width: 700px) 
+{
+  body
+  {
+    font-size: 12px;
+  }
+
+  .content-header:after {
+    width: 25%;
+  }
+
+  .features {
+    width: 70%;
+  }
+
+  .foot-landing {
+    min-height: 350px;
+  }
+
+  .foot-landing2 {
+    flex-direction: column;
+  }
+}
+
+@media all and (max-width: 550px) 
+{
+  .content-header:after {
+    width: 35%;
+  }
+
+  .features {
+    width: 80%;
+  }  
+
+  .button-5
+  {
+    padding: 12px 12px;
+  }
+}
