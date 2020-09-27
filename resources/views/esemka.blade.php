@@ -14,6 +14,8 @@
     <script src="/Aset/script.js"></script>
     
     <title>Esemka</title>
+
+    <?php echo view('head_tags.pwa_head'); ?>
     
   </head>
   <body id="body">    

@@ -15,11 +15,19 @@ Route::get('/', function () {
     return view('esemka');
 });
 
+// For Offline Page PWA
+Route::get('/offline', function() {
+    return view('offline');
+});
+
 Auth::routes();
 Auth::routes(['verify' => true]);
 
 //Mlebu Web e (wes login)
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/jobs', function() {
+    return view('jobs');
+});
 Route::get('/akun', 'AkunController@index');
 
 Route::get('auth/{provider}', 'Auth\SocialiteController@redirectToProvider');
