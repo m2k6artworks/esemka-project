@@ -1,7 +1,7 @@
 {
-    "name": "E-Semka",
-    "short_name": "E-Semka",
-    "description": "E-Semka for job and intership recruitment",
+    "name": "nikerja",
+    "short_name": "nikerja",
+    "description": "nikerja for job and intership recruitment",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#FFFFFF",
