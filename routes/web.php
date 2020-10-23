@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('esemka');
+    return view('landing');
 });
 
 // For Offline Page PWA
