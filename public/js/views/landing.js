@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             wireframeOption.classList.add("active");
             wireframeVideo.src = wireframeOption.querySelector('.link').innerText;
+            wireframeVideo.autoplay = true;
         }
     });
 });

@@ -1,3 +1,7 @@
+.alert{
+    font-family: 'Poppins', sans-serif;    
+}
+
 body {
     background-color: #f7f7f7;
     text-align: none;
@@ -73,6 +77,10 @@ body {
     cursor: pointer;
 }
 
+#font-subscribe{
+    font-size: 20px;
+}
+
 .btn-subscribe:hover {
     background-color:#0488fb;
     color: white;
@@ -99,7 +107,7 @@ body {
 }
 
 .content-right-background .content .hashtag {
-    font-size: 1.2em;
+    font-size: 35px;
 }
 
 .content-right-background .content .hashtag i {
@@ -107,9 +115,11 @@ body {
 }
 
 .content-right-background .content .with-text {
-    font-size: 1.4em;
+    font-size: 35px;
 }
-
+.content-right-background .content .desc {
+    font-size: 20px
+}
 .content-right-background .content .btn-subscribe {
     box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.25);
 }
@@ -126,8 +136,12 @@ body {
 
 .feature-content .short-desc .hashtag {
     display: inline-block;
-    font-size: 1.4em;
-    margin-bottom: 0.5em;
+    font-size: 35px;
+    margin-bottom: 0.2em;
+}
+
+.feature-content #desc{
+    font-size: 20px;
 }
 
 .feature-card-list {
@@ -142,9 +156,10 @@ body {
     width: calc(33% - 1.6em);
     padding: 1em;
     overflow: hidden;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    box-shadow: none;
     cursor: pointer;
     color: black;
+    transition: 0.5s;
 }
 
 .feature-card-list .feature-card:hover {
@@ -167,7 +182,7 @@ body {
 .feature-card .card-title {
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
-    font-size: 1.15em;
+    font-size: 20px;
 }
 
 .feature-card .card-title::after {
@@ -177,12 +192,13 @@ body {
     width: 30%;
     height: 0.15em;
     margin-top: 0.25em;
+    margin-bottom: 0.75em;
 }
 
 .feature-card .card-content {
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
-    font-size: 0.9em;
+    font-size: 17px;
     padding: 0;
     margin: 0;
 }
@@ -238,6 +254,8 @@ body {
 
 .content-right-background.history {
     background-image: url('/assets/images/landing/Group_20.png');
+    background-size: contain;
+    background-position: right;
 }
 
 .content-right-background.history .content .hashtag i {
@@ -259,7 +277,7 @@ body {
     background-image: url('/assets/images/landing/Path_52.png');
     background-size: cover;
     width: 100%;
-    padding-top: 5em;
+    padding-top: 7.5em;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -271,6 +289,7 @@ body {
     width: 100%;
     padding-left: 2em;
     padding-right: 2em;
+    padding-bottom: 5em;
 }
 
 .footer .subscribe-info .partner {
@@ -279,7 +298,7 @@ body {
 }
 
 .footer .subscribe-info .partner img {
-    width: 100%;
+    /*width: 100%;*/
 }
 
 .footer .subscribe-info .now-subs {
@@ -367,6 +386,19 @@ body {
     color: white;
 }
 
+.footer .social-media-list .social-media.youtube .icon {
+    background-color: crimson;
+    color: white;
+}
+
+#socmed-link:hover .icon {
+    background-color: #999;
+}
+
+#socmed-link:hover .name {
+    color: #ddd;
+}
+
 .footer .social-media-list .social-media .name {
     color: white;
     font-family: 'Poppins', sans-serif;
@@ -438,7 +470,7 @@ body {
 #subscribe-modal .modal-body input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #a2a2a2;
     opacity: 1; /* Firefox */
-  }
+}
   
 #subscribe-modal .modal-body input:-ms-input-placeholder { /* Internet Explorer 10-11 */
     color: #a2a2a2;
@@ -451,6 +483,91 @@ body {
 #subscribe-modal .modal-body .btn-subscribe {
     border-radius: 0.5em;
     box-shadow: none;
+}
+
+#login-modal .modal-content {
+    border: none;
+    border-radius: 0.5em;
+}
+
+#login-modal .modal-body {
+    padding: 0;
+}
+
+#login-modal .head-title {
+    width: 100%;
+    height: 5.5em;
+    background-image: url('/assets/images/landing/login-top.png');
+    background-size: 100% 100%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: white;
+    padding-top: 0.5em;
+}
+
+#login-modal .login-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#login-modal .login-btn-container {
+    margin-top: 1em;
+}
+
+#login-modal .login-btn {
+    display: flex;
+    width: 65%;
+    padding: 0.5em;
+    margin-bottom: 1.5em;
+    justify-content: center;
+    background-color: white;
+    background: #FFFFFF;
+    box-shadow: 10px 12px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+#login-modal .login-btn:hover {
+    background-color: #f0f0f0;
+}
+
+#login-modal .login-btn .google-icon {
+    width: 1.5em;
+    height: 1.5em;
+    background-image: url('/assets/images/landing/flat-color-icons_google.png');
+    background-size: cover;
+}
+
+#login-modal .footer-modal {
+    height: 11em;
+}
+
+#login-modal .footer-modal .vector-img {
+    background-image: url('/assets/images/landing/reading-side.png');
+    background-size: 98% 100%;
+    background-position: right;
+}
+
+#login-modal .footer-modal {
+    font-family: 'Poppins', sans-serif;
+    padding: 0.25em;
+}
+
+#login-modal .footer-modal .text-team {       
+    text-align: center;
+    font-size: 0.9em;
+}
+
+#login-modal .footer-modal span {
+    color: #00a8ff;
+}
+
+#login-modal .footer-modal .fa-heart {
+    color: #fe281b;   
 }
 
 @media screen and (max-width: 960px) {
@@ -478,7 +595,7 @@ body {
         width: calc(50% - 1em);
         padding: 1em;
         overflow: hidden;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+        box-shadow: none;
         cursor: pointer;
         color: black;
     }
@@ -516,6 +633,32 @@ body {
         padding-left: 2.5%;
         padding-right: 2.5%;        
         margin-bottom: 1.5%;
+    }
+
+    /*rifky*/
+    .content-right-background .content .hashtag {
+        font-size: 30px;
+    }
+
+    .content-right-background .content .with-text {
+        font-size: 30px;
+    }
+    .content-right-background .content .desc {
+        font-size: 15px;
+    }
+
+    .feature-content .short-desc .hashtag {
+        display: inline-block;
+        font-size: 30px;
+        margin-bottom: 0.2em;
+    }
+
+    .feature-content #desc{
+        font-size: 15px;
+    }
+
+    .content-right-background.history {
+        background-position: top right;
     }
 }
 
@@ -558,6 +701,10 @@ body {
         width: 100%;
         padding-left: 1em;
         padding-right: 1em;
+    }
+    
+    .footer .subscribe-info .email-subs {
+        /*width: 60% !important;*/
     }
 }
 
