@@ -1,19 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container w-75">
-    <div class="row justify-content-center align-center">                    
-                    <p class="content-header">
-                        Verifikasi E-mail
-                    </p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+
+                <div class="card-body">
                     @if (session('resent'))
                         <div class="alert alert-success" role="alert">
-                            {{ __('Link Yang Baru Berhasil Dikirim.') }}
+                            {{ __('A fresh verification link has been sent to your email address.') }}
                         </div>
                     @endif
 
-                    {{ __('Sebelum Melanjutkan, Silakan Cek E-mail Anda Untuk Melakukan Verifikasi') }}
-                    {{ __('Jika Kamu Belum Mendapatkan E-mail Dari Kami') }} <a class="mt-2" href="{{ route('verification.resend') }}">{{ __('Siakan Klik Disini Untuk Mengirim Ulang Link') }}</a>.
+                    {{ __('Before proceeding, please check your email for a verification link.') }}
+                    {{ __('If you did not receive the email') }}, <a href="{{ route('verification.resend') }}">{{ __('click here to request another') }}</a>.
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 @endsection

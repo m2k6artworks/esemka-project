@@ -1,13 +1,13 @@
 <?php
 
-namespace esemka\Http\Controllers\Auth;
+namespace esemka\Http\Controllers;
 
 use Illuminate\Http\Request;
-use esemka\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Auth;
-use esemka\SocialAccount;
-use esemka\User;
+use App\SocialAccount;
+use App\User;
 
 class SocialiteController extends Controller
 {
@@ -15,36 +15,25 @@ class SocialiteController extends Controller
         return Socialite::driver($provider)->redirect();
     }
     
-    public Function handleProviderCallback($provider){
+    public Function handleProviderCallback(){
         try{
-            $user = Socialite::driver($provider)->user();
+            $user = Socialite::driver('google')->User();
         }catch(Exception $e){
-            return redirect('/');
+            return redirect('/login');
         }
         
-        $socialAccount = SocialAccount::where('provider_id', $user->getId())
-                       ->where('provider_name', $provider)
-                       ->first();
+        $authUser = $this->findOrCreateUser($user, 'google');
         
-        if ($socialAccount) {
-            Auth::login($socialAccount->user, true);
-        }else{
-            return redirect('/belum-terdaftar');
-        }
         
-        if(Auth::user()->hasRole('user')){
-            return redirect('/siswa');
-        }elseif (Auth::user()->hasRole('bkk')) {
-            return redirect('/bkk');
-        }
-
-        return redirect("opoki");
+        Auth::login($authUser, true);
+        
+        return redirect('/dashboard');
     }
     
-    public function findOrCreateUser($socialUser, $provider){
+    public function findOrCreateUser($socialUser){
         $date = date('Y-m-d H:i:s');
         $socialAccount = SocialAccount::where('provider_id', $socialUser->getId())
-                       ->where('provider_name', $provider)
+                       ->where('provider_name', 'google')
                        ->first();
         
         if($socialAccount){
@@ -58,12 +47,11 @@ class SocialiteController extends Controller
                     'email' => $socialUser->getEmail(),
                     'email_verified_at' => $date
                 ]);
-                $user->assignRole('user');
             }
             
             $user->socialAccount()->create([
                 'provider_id' => $socialUser->getId(),
-                'provider_name' => $provider
+                'provider_name' => 'google'
             ]);
             
             return $user;

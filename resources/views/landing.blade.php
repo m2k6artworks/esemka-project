@@ -208,7 +208,9 @@
                     <div class="login-btn-container d-flex justify-content-center">
                         <div class="login-btn">
                             <div class="google-icon"></div>&nbsp;
-                            <div>Log in with Google</div>
+                            <a href="/redirect/google">
+                                <div>Log in with Google</div>
+                            </a>
                         </div>
                     </div>
                     <div class="footer-modal row p-0 m-0">

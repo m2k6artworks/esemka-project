@@ -1,133 +1,73 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+@extends('layouts.app')
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <link rel="stylesheet" href="/Aset/style.css">
-    <link rel="stylesheet" href="/Aset/responsive.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="/Aset/script.js"></script>
-    
-    
-    <title>Esemka</title>
-    
-    <style id="style">
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Login') }}</div>
 
-    </style>
-  </head>
-  
-  <body id="body">
-    
-    <div class="preloader">
-      <div class="loading">
-        <div class="bouncing-ball"></div>
-        <p>Harap Tunggu..</p>
-      </div>
-    </div>
+                <div class="card-body">
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
 
-    <div class="login-body container h-100">
-      <div class="row justify-content-center align-items-center">
-        <div class="col-12 col-sm-6 login-left">
-          <div class="ml-4 mt-3"> <a class="logo bold" href="/">esemka</a> </div>
-          <img src="/Aset/login-art.svg">
-        </div>
-        <div class="col-12 col-sm-6 login-right" id="contents">
-          <form class="form-custom" method="POST" id="log-content" action="{{ route('login') }}">
-            @csrf
-            <h3 class="bold mb-3 text-center"> Login </h3>
-            <div class="form-group mb-3">
-              <label for="email">E-mail</label>
-                <input name="email" type="email"  input-mode="email" autocomplete="email" class="form-control @error('email') is-invalid @enderror" id="email" value="{{ old('email') }}" placeholder=" E-Mail" required autofocus>
-                @error('email')
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
-                <span class="invalid-feedback" role="alert">
-                  <strong>{{ $message }}</strong>
-                </span>
-                @enderror
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                    <label class="form-check-label" for="remember">
+                                        {{ __('Remember Me') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Login') }}
+                                </button>
+
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-                
-            <div class="form-group mb-0">
-              <label for="password" class="text-left">Password</label>
-                <div class="d-flex">
-                  <input name="password" type="password" autocomplete="new-password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder=" Password" required>
-
-                  <div class="password-hidden" id="passwordHidden" onclick="passwordToogle()">
-                    <i class="fas fa-eye-slash" id="icon"></i>
-                  </div>    
-                  @error('password')
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                  </span>
-                  @enderror
-                </div>
-              </div>
-                
-  {{--             <div class="form-group row">
-                <div class="col-md-6 offset-md-4">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                
-                    <label class="form-check-label" for="remember">
-                      {{ __('Ingat Saya') }}
-                    </label>
-                  </div>
-                </div>
-              </div> --}}
-                
-              <div class="text-center">
-                @if (Route::has('password.request'))
-                  <a class="btn btn-link m-2 bold" href="{{ route('password.request') }}">
-                    {{ __('Lupa Password ?') }}
-                  </a>
-                @endif
-                <br>
-                <button type="submit" class="text-center btn btn-custom">Login</button>
-                <p class="content-caption m-3">Atau</p>
-            
-                <div class="text-center">
-                  <a href="{{ url('/auth/google') }}">
-                    <button class="api google" type="button">
-                      <i class="fab fa-google"></i> Login Dengan Google 
-                    </button>
-                  </a>
-                      
-                  <a href="{{ url('auth/facebook') }}"> 
-                    <button class="api facebook" type="button">
-                      <i class="fab fa-facebook"></i> Login Dengan Facebook
-                    </button>
-                  </a>
-                  
-                  <a class="btn btn-link bold" id="btn-buat" href="{{ url('/register') }}">
-                    {{ __('Buat Akun') }}
-                  </a>
-
-                </div>
-              </div>
-            </form> 
-          </div>     
         </div>
-      </div>
-      
-{{--       <script type="text/javascript">
-        $(document).ready(function(){
-          $("#btn-buat").click(function(){
-              // $.get("/Aset/style-box.css")
-              $("#contents").load("/register #reg-content")
-              $("#style").load("/Aset/style-box.css")
-            });
-
-          $("#btn-masuk").click(function(){
-              // $.get("/Aset/style-box.css")
-              $("#contents").load("/login #log-content")
-              $("#style").empty()
-            });
-        });
-      </script> --}}
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  
-  </body>
-</html>
+    </div>
+</div>
+@endsection

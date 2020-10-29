@@ -174,6 +174,9 @@ return [
         // esemka\Providers\BroadcastServiceProvider::class,
         esemka\Providers\EventServiceProvider::class,
         esemka\Providers\RouteServiceProvider::class,
+
+        //Socialite
+        Laravel\Socialite\SocialiteServiceProvider::class,
     ],
 
     /*
@@ -224,6 +227,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        //socialite
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 
