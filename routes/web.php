@@ -22,7 +22,6 @@ Route::get('/offline', function() {
     return view('offline');
 });
 
-
 //Socialite / Login With Google
 Route::get('/redirect/{provider}', 'Auth\SocialiteController@redirectToProvider');
 Route::get('/callback/{provider}', 'Auth\SocialiteController@handleProviderCallback');
@@ -36,6 +35,22 @@ Route::get('/bkk', function() {
 Route::get('/siswa', function() {
     return 'Halaman untuk siswa';
 })->middleware('role:user')->name('user.page');
+
+Route::get('/student/jobs', function() {
+    return view('student/jobs');
+});
+
+Route::get('/student/apply-status', function() {
+    return view('student/apply-status');
+});
+
+Route::get('/student/profile', function() {
+    return view('student/profile');
+});
+
+Route::get('/student/template', function() {
+    return view('student/template');
+});
 
 // Auth::routes();
 // Auth::routes(['verify' => true]);

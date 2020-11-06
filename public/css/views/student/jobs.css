@@ -1,165 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-.navbar {
-    position: sticky;
-    top: 0;
-    position: -webkit-sticky;
-    background-color: white;
-    z-index: 99;
-}
-
-.profile-btn {
-    width: 2em;
-    height: 2em;
-    padding: 0;
-    border-radius: 50%;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.profile-btn img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.profile-menu {
-    display: none;
-    position: absolute;
-    transform: translateX(-90%);
-    list-style: none;
-    background-color: white;
-    padding: 0;
-    width: 18em;
-    margin-top: 0.5em;
-    border-radius: 0.5em;
-    text-align: left;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
-}
-
-.profile-menu.show {
-    display: block;
-    animation: profile-dropdown 0.25s ease-out;
-}
-
-.profile-menu .profile-short-info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.profile-menu .profile-short-info .profile-img {
-    width: 3.5em;
-    height: 3.5em;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0.5em;
-}
-
-.profile-menu .profile-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.profile-menu .profile-short-info .profile-name-status {
-    width: calc(18em - 5em);
-}
-
-.profile-menu .profile-short-info .profile-name {
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    width: 100%;
+* {
     font-family: 'Poppins', sans-serif;
-    font-size: 1em;
-    font-weight: bold;
-    overflow: hidden;
-    text-align: left;
 }
 
-.profile-menu .profile-short-info .profile-status {
-    text-align: left;
+.navbar-right-menu .page-menu:nth-child(1) {
+    color: #2D9CDB;
 }
 
-.profile-menu .profile-status .status {
-    font-size: 0.9em;
-    margin-right: 0.25em;
-}
-
-.profile-menu .profile-status .dot.green {
-    background-color: #1FDE00;
-    border-radius: 50%;
-    width: 0.6em;
-    height: 0.6em;
-}
-
-.profile-menu .divider {
-    width: 100%;
-    height: 1px;
-    background-color:#E5E5E5;
-}
-
-.profile-menu li {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-}
-
-.profile-menu li a {
-    margin-left: 0.5em;
-    text-decoration: none;
-    font-size: 1em;
-    font-family: 'Poppins', sans-serif;
-    color: black;
-}
-
-.profile-menu li a:hover {
-    text-decoration: none;
-    color: #0f73f0;
-}
-
-@keyframes profile-dropdown {
-    0% {
-        opacity: 0;
-        transform: translateY(-20%) translateX(-90%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0%) translateX(-90%);
-    }
-}
-
-/* Fix Bug For Sticky Hamburger Menu Btn */
-.menu_btn {
-    position: fixed;
-    top: 2.5em;
-}
-
-.menu_btn > span, .menu_btn > span::before, .menu_btn > span::after {
-    background-color: darkgrey;
-}
-
-/* Menu Button When Sidenav Opened */
-#menu_toggle:checked ~ .menu_btn > span, #menu_toggle:checked ~ .menu_btn > span::before, 
-#menu_toggle:checked ~ .menu_btn > span::after {
-    background-color: white;
-}
-
-/* Fix Bug For Sticky Logo */
-.logo-head .logo {
-    position: fixed;
-    top: 0.23em;
-    color: #29AAFE;
-}
-
-/* Head Logo When Sidenav Opened */
-#menu_toggle:checked ~ .logo-head .logo {
-    color: white;
-}
+/* ----------------------- Page Content ---------------------------- */
 
 #carousel-news {
     width: 100%;
@@ -177,23 +26,23 @@
 }
 
 /* Dot Carousel Indicator */
-.carousel-indicators li {
+#carousel-news .carousel-indicators li {
     width: 0.7em;
     height: 0.7em;
     border-radius: 50%;
 }
 
-.news-1 {
+#carousel-news .news-1 {
     background-color: rgba(45, 156, 219, 0.15);
     height: 100%;
 }
 
-.news-1 .col-6:nth-child(1) {
+#carousel-news .news-1 .col-6:nth-child(1) {
     padding-left: 5em;
     padding-right: 5em;
 }
 
-.news-1 .col-6:nth-child(1) p {
+#carousel-news .news-1 .col-6:nth-child(1) p {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 1.8em;
@@ -202,7 +51,7 @@
     color: black;
 }
 
-.news-1 .col-6:nth-child(1) a {
+#carousel-news .news-1 .col-6:nth-child(1) a {
     font-family: 'Poppins', sans-serif;
     background-color: white;
     font-size: 1.3em;
@@ -213,10 +62,12 @@
     cursor: pointer;
 }
 
-.news-1 .col-6:nth-child(2) img {
+#carousel-news .news-1 .col-6:nth-child(2) img {
     width: 25em;
     height: 25em;
 }
+
+/* ---- Search Input ---- */
 
 .search-input {
     margin-bottom: 2em;
@@ -286,8 +137,8 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
     box-shadow: 20px 15px 50px rgba(0, 0, 0, 0.15);
     border-radius: 0.5em;
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
 }
 
 .list-job .card .card-img-top {
@@ -301,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-.list-job .card .card-title {
+.list-job .card .card-title {    
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 1.1em;
@@ -310,13 +161,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .list-job .card .card-text {
     font-family: 'Poppins', sans-serif;
-    font-size: 0.8em;
+    font-size: 0.95em;
     color: black;
-    overflow: hidden;
     height: 4.4em;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;  
+    overflow: hidden;
 }
 
 .list-job .card .card-body .btn {
@@ -328,8 +179,16 @@ h1, h2, h3, h4, h5, h6 {
     padding-right: 4em;
 }
 
+.list-job .card .card-body .btn:hover {
+    background-color: #1e7bb0;
+}
+
 #detail-job-modal .modal-content {
     border: none;
+}
+
+#detail-job-modal .modal-body {
+    padding: 1.5em;
 }
 
 #detail-job-modal .modal-content .modal-header, 
@@ -337,29 +196,31 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
 }
 
-.job-info {
+#detail-job-modal .company-info {
     display: flex;
-    margin-bottom: 1em;
+    margin-bottom: 2.5em;
 }
 
-.job-info .company-img {
-    width: 8em;
-    height: 8em;
+#detail-job-modal .company-info .company-img {
+    width: 10em;
+    height: 9em;
+    overflow: hidden;
     border-radius: 0.5em;
-    margin-right: 1em;
+    margin-right: 1.5em;
+    border: 1px solid #c9c9c9;
 }
 
-.job-info .company-img img {
+#detail-job-modal .company-info .company-img img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
-.job-info .job-name-location {
+#detail-job-modal .company-info .company-name-location {
     width: calc(100% - 8.5em);
 }
 
-.job-info .job-name-location .job-name {
+#detail-job-modal .company-info .company-name-location .company-name {
     font-family: 'Poppins', sans-serif;
     font-size: 1.5em;
     font-weight: bold;
@@ -369,7 +230,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
 }
 
-.job-info .job-name-location .job-location {
+#detail-job-modal .company-info .company-name-location .company-location {
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
@@ -377,25 +238,38 @@ h1, h2, h3, h4, h5, h6 {
     color: rgba(0, 0, 0, 0.5);
 }
 
-.job-info .job-name-location .fa-map-marker-alt {
+#detail-job-modal .company-info .company-name-location .fa-map-marker-alt {
     color:#2D9CDB;
 }
 
-.job-type-salary {
+#detail-job-modal .job-name,
+#detail-job-modal .job-type-salary,
+#detail-job-modal .job-description {
     padding-left: 1em;
     padding-right: 1em;
-    margin-bottom: 1em;
+    margin-bottom: 0.75em;
 }
 
-.job-type-salary > div:nth-child(1) {
+#detail-job-modal .job-name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 1.5em;  
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+}
+
+#detail-job-modal .job-type-salary > div:nth-child(1) {
     border-right: 1px solid #ced4da;
 }
 
-.job-type-salary > div:nth-child(2) {
+#detail-job-modal .job-type-salary > div:nth-child(2) {
     border-left: 1px solid #ced4da;
 }
 
-.job-type-salary .job-side-head {
+#detail-job-modal .job-type-salary .job-side-head {
     display: block;
     padding: 0;
     margin: 0;
@@ -405,18 +279,17 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
-.job-type-salary .job-side-detail {
+#detail-job-modal .job-type-salary .job-side-detail {
     font-family: 'Poppins', sans-serif;
     font-size: 0.9em;
     color: rgba(0, 0, 0, 0.5);
 }
 
-.job-description {
-    padding-left: 1em;
-    padding-right: 1em;
+#detail-job-modal .job-description > div { 
+    margin-bottom: 0.5em;
 }
 
-.job-description p {
+#detail-job-modal .job-description p {
     font-family: 'Poppins', sans-serif;
 }
 
@@ -426,9 +299,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #detail-job-modal .modal-footer .btn-favorite-job {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5em;
+    height: 2.5em;
     background-color: white;
     border-radius: 100%;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2px 4px rgba(32, 28, 28, 0.25);
+}
+
+#detail-job-modal .modal-footer .btn-favorite-job > .fas.fa-heart {
+    color: #F44747;
 }
 
 #detail-job-modal .modal-footer .btn-apply-job {
@@ -444,6 +326,42 @@ h1, h2, h3, h4, h5, h6 {
     background: #5cb2e3;
 }
 
+#apply-job-modal .modal-header {
+    border: none;
+}
+
+#apply-job-modal .modal-footer {    
+    display: flex;
+    justify-content: center;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+#apply-job-modal .modal-footer a {
+    display: block;
+    border: none;
+    width: 50%;
+    margin: 0;
+    background-color: #EFEFEF;
+    padding: 2.5%;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+#apply-job-modal .modal-footer a:hover {
+    background-color: #bdbdbd;
+}
+
+#apply-job-modal .modal-footer a:nth-child(1) {
+    border-right: 1px solid #C4C4C4;
+}
+
+#apply-job-modal .modal-footer a:nth-child(2) {
+    border-left: 1px solid #C4C4C4;
+}
+
 @media screen and (max-width: 992px) {
     .container {
         max-width: none;
@@ -453,88 +371,167 @@ h1, h2, h3, h4, h5, h6 {
         height: 22em;
     }
 
-    .news-1 .col-6:nth-child(1) {
+    #carousel-news .news-1 .col-6:nth-child(1) {
         padding-left: 4em;
         padding-right: 4em;
     }
     
-    .news-1 .col-6:nth-child(1) p {
+    #carousel-news .news-1 .col-6:nth-child(1) p {
         font-size: 1.4em;
         line-height: 1.4em;
     }
     
-    .news-1 .col-6:nth-child(1) a {
+    #carousel-news .news-1 .col-6:nth-child(1) a {
         font-size: 1em;
         padding: 0.5em;
         padding-left: 1em;
         padding-right: 1em;
     }
     
-    .news-1 .col-6:nth-child(2) img {
+    #carousel-news .news-1 .col-6:nth-child(2) img {
         width: 18em;
         height: 18em;
     }
 }
 
-@media screen and (max-width: 601px) {
-    #carousel-news {
-        height: 12em;
+@media screen and (max-width: 767px) {
+    #carousel-news .news-1 .col-6:nth-child(1) {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+    
+    #carousel-news .news-1 .col-6:nth-child(1) p {
+        font-size: 1.2em;
+        line-height: 1.4em;
+    }
+    
+    #carousel-news .news-1 .col-6:nth-child(2) img {
+        width: 15em;
+        height: 15em;
     }
 
-    .carousel-indicators li {
+    .list-job {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #carousel-news {
+        height: 15em;
+    }
+
+    #carousel-news .carousel-indicators li {
         width: 0.4em;
         height: 0.4em;
     }    
 
-    .news-1 .col-6:nth-child(1) {
+    #carousel-news .news-1 .col-6:nth-child(1) {
         padding-left: 1.8em;
         padding-right: 1.8em;
     }
     
-    .news-1 .col-6:nth-child(1) p {
+    #carousel-news .news-1 .col-6:nth-child(1) p {
         font-size: 0.6em;
         line-height: 1.4em;
         margin-bottom: 1em;
     }
     
-    .news-1 .col-6:nth-child(1) a {
+    #carousel-news .news-1 .col-6:nth-child(1) a {
         font-size: 0.5em;
         padding: 0.5em;
         padding-left: 1em;
         padding-right: 1em;
     }
     
-    .news-1 .col-6:nth-child(2) img {
+    #carousel-news .news-1 .col-6:nth-child(2) img {
         width: 8em;
         height: 8em;
     }
 
-    .job-info {
+    .list-job > div {
+        margin-bottom: 1em;
+    }
+
+    .list-job {
+        padding: 0;        
+    }
+
+    .list-job .col-6 {
+        padding: 0;
+        padding-left: 1.5%;
+        padding-right: 1.5%;
+    }
+
+    .list-job .card {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .list-job .card .card-body {
+        padding: 7%;
+    }
+
+    .list-job .card .card-img-top {        
+        height: 10em;
+    }    
+
+    .list-job .card .card-body .card-title {       
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: 1em;
+        font-family: 'Poppins', sans-serif;
+        font-weight: b;
+        text-align: left;        
+    }
+
+    .list-job .card .card-body .card-text {        
+        text-align: left;
+    }
+
+    .list-job .card .card-body .btn {
+        display: none;
+    }
+
+    #detail-job-modal .modal-content {
+        height: 100%;
+    }
+
+    #detail-job-modal .modal-body {
+        padding: 0.4em;
+    }
+
+    #detail-job-modal .company-info {
         display: flex;
         flex-direction: column;
         padding-left: 1em;
         padding-right: 1em;
     }
 
-    .job-info .company-img {
-        width: 100%;
-        height: 20em;
+    #detail-job-modal .company-info .company-img {
+        width: 100%;      
+        height: 18em;
         margin: 0;
-    }
+    }    
     
-    .job-info .job-name-location {
+    #detail-job-modal .company-info .company-name-location {
         margin-top: 0.5em;
         width: 100%;
     }
 }
 
-@media screen and (max-width: 321px) {
-    .news-1 .col-6:nth-child(2) img {
-        width: 7em;
-        height: 7em;
+@media screen and (max-width: 340px) {
+    #carousel-news .news-1 .col-6:nth-child(2) img {
+        width: 6.5em;
+        height: 6.5em;
+        background-position: left;
     }
 
-    .job-info .company-img {
+    #detail-job-modal .company-info .company-img {
         width: 100%;
         height: 15em;
         margin: 0;
