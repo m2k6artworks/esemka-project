@@ -1,0 +1,386 @@
+.container-fluid {
+    max-width: 1140px;
+    min-width: 320px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile-information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    border-radius: 1em;
+    background-color: rgba(45, 156, 219, 0.15);
+    margin-bottom: 2em;
+}
+
+.profile-information .setting-btn {
+    cursor: pointer;
+    margin-left: auto;
+    font-size: 1.8em;
+}
+
+.profile-information .profile-img {
+    width: 5em;
+    height: 5em;
+    margin-top: 5%;
+    clip-path: circle();
+}
+
+.profile-information .profile-job, 
+.profile-information .profile-username {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    width: 85%;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.profile-information .profile-job {
+    margin-top: 1.5%;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.profile-information .profile-username {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.profile-information .profile-countable {
+    display: flex;    
+    justify-content: space-between;
+    margin-top: 1.5%;
+    width: 60%;    
+    background-color: white;
+    border-radius: 0.75em;
+}
+
+.profile-information .profile-countable .count-container {
+    text-align: center;
+    padding-top: 1.25%;
+    padding-bottom: 1.25%;
+    width: 33.33%;
+    border-right: 1px solid rgba(196, 196, 196, 0.5);
+}
+
+.profile-information .profile-countable .count-container:last-child {
+    border-right: none;
+}
+
+.profile-information .profile-countable .count-container
+.ammounts {
+    font-family: 'Poppins', sans-serif;
+}
+
+.profile-information .profile-countable .count-container
+.categories {
+    color: rgba(0, 0, 0, 0.5);
+    font-family: 'Poppins', sans-serif;
+}
+
+.skill-information {
+    margin-bottom: 2.5em;
+}
+
+.skill-information .skills {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skill-information .skills .skill-item {
+    flex-grow: 1;
+    padding: 0.7% 2%;
+    margin: 0.5em;
+    background-color: #EDEDED;    
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border-radius: 0.25em;
+    text-align: center;
+}
+
+#tab-attachment {
+    justify-content: space-between;
+    border-bottom: 1px solid #C4C4C4;
+    margin-bottom: 2.5em;
+}
+
+#tab-attachment .nav-item {
+    padding: 0;
+}
+
+#tab-attachment .nav-link {
+    color: rgba(0, 0, 0, 0.5);
+    margin: 2.5%;    
+    margin-bottom: 0;
+}
+
+#tab-attachment .nav-link > i {
+    font-size: 1.6em;
+    margin-bottom: 0.25em;
+}
+
+#tab-attachment .nav-link > div {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+#tab-attachment .nav-link.active {
+    color: black;
+    background-color: transparent;
+}
+
+.tab-content {
+    margin-bottom: 2em;
+}
+
+.tab-content .card {
+    height: 100%;
+    max-height: 320px;
+    cursor: pointer;
+    box-shadow: 0px 7px 30px rgba(0, 0, 0, 0.25);
+    border: none;
+    margin-bottom: 4.5em;
+}
+
+.tab-content .card .card-img-top {
+    height: 80%;
+}
+
+.tab-content .card .card-body {    
+    padding: 2.5%;
+    text-align: center;
+}
+
+.tab-content .card .card-body .card-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+}
+
+.tab-content .card:hover {
+    background-color: #e9e9e9;
+}
+
+.tab-content .add-portfolio {
+    border-radius: 0.8em;
+}
+
+.tab-content .add-portfolio .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab-content .add-portfolio .card-body .fa-plus-circle {
+    font-size: 5em;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+
+.tab-content .add-portfolio .card-body div {
+    font-family: 'Poppins', sans-serif;    
+    font-size: 1.5em;
+    font-weight: normal;
+}
+
+#certificate-carousel .carousel-indicators {
+    transform: translateY(5em);
+}
+
+#certificate-carousel .carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #C4C4C4;
+}
+
+#certificate-carousel .carousel-indicators li.active {
+    background-color: #2D9CDB;
+}
+
+#certificate-carousel .carousel-item {
+    text-align: center;
+}
+
+#certificate-carousel .carousel-item .certificate-img {
+    display: inline-block;
+    width: 70%;
+    height: 20em;
+}
+
+#certificate-carousel .carousel-item .certificate-img img {
+    object-fit: contain;
+    object-position: center;
+}
+
+#certificate-carousel .carousel-control-prev,
+#certificate-carousel .carousel-control-next {
+    color: black;
+}
+
+#detail-portfolio-modal .modal-content {
+    border: none;
+}
+
+#detail-portfolio-modal .modal-header {
+    border: none;
+    padding-bottom: 0;
+}
+
+#detail-portfolio-modal .post-info {
+    display: flex;
+    margin-bottom: 1em;
+}
+
+#detail-portfolio-modal .post-info .profile-img {
+    width: 4em;
+    height: 4em;
+    clip-path: circle();
+    margin: 0 1em 0em;
+}
+
+#detail-portfolio-modal .post-info .name-time {
+    width: calc(100% - 7em);
+}
+
+#detail-portfolio-modal .post-info .profile-username,
+#detail-portfolio-modal .post-info .post-time {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    width: 100%;
+}
+
+#detail-portfolio-modal .post-info .profile-username {    
+    font-weight: 400;
+    font-size: 1.2em;
+    -webkit-line-clamp: 2;
+    color: black;
+}
+
+#detail-portfolio-modal .post-info .post-time {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#detail-portfolio-modal .post-carousel {
+    margin-bottom: 1em;
+    border-radius: 0.5em;
+    overflow: hidden;
+}
+
+#detail-portfolio-modal .post-description {
+    font-family: 'Poppins', sans-serif;
+}
+
+#detail-portfolio-modal .modal-footer {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#detail-portfolio-modal .modal-footer .btn-footer {
+    display: flex;
+    align-items: center;
+    padding: 0.25em 0.5em;
+    cursor: pointer;
+}
+
+#detail-portfolio-modal .modal-footer .btn-footer:nth-child(3) {
+    margin-left: auto;
+}
+
+#detail-portfolio-modal .modal-footer .btn-footer i {
+    margin-right: 0.5em;
+}
+
+#detail-portfolio-modal .modal-footer .btn-footer > .ammounts {
+    font-family: 'Poppins', sans-serif;
+}
+
+#detail-portfolio-modal .modal-footer .btn-footer .fa-heart {
+    color: #FC5656;
+}
+
+@media only screen and (max-width: 768px) {
+    .profile-information .profile-countable {
+        padding: 1em;
+        margin-top: 1.5%;
+        width: 80%;    
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .profile-information .profile-countable {
+        margin-top: 1.5%;
+        width: 95%;    
+    }
+
+    .profile-information .profile-countable .count-container {
+        text-align: center;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+
+    .profile-information .profile-countable .count-container
+    .ammounts {
+        font-size: 0.9em;
+    }
+
+    .profile-information .profile-countable .count-container
+    .categories {
+        font-size: 0.9em;
+    }
+
+    .tab-content .card {
+        height: 280px;
+        margin-bottom: 1.5em;
+    }
+
+    #detail-portfolio-modal .modal-content {
+        width: 100%;
+    }
+
+    #detail-portfolio-modal .post-info .profile-img {
+        width: 3em;
+        height: 3em;
+        clip-path: circle();
+        margin: 0 0.5em 0em;
+    }
+
+    #detail-portfolio-modal .modal-footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #detail-portfolio-modal .modal-footer .btn-footer {
+        justify-content: flex-start;
+    }
+
+    #detail-portfolio-modal .modal-footer .btn-footer:nth-child(3) {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .profile-information .profile-countable {
+        margin-top: 1.5%;
+        width: 98%
+    }
+}
