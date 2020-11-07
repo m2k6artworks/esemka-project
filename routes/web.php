@@ -27,6 +27,11 @@ Route::get('/offline', function() {
 Route::get('/redirect/{provider}', 'Auth\SocialiteController@redirectToProvider');
 Route::get('/callback/{provider}', 'Auth\SocialiteController@handleProviderCallback');
 
+Route::get('/bkk/profile', 'CompanyController@profile')->name('bkk.profile');
+// Route::get('/bkkprofile', function() {
+//     return view('companies/bkk-profile');
+// });
+
 //BKK
 Route::get('/bkk', function() {
     return 'Halaman untuk BKK';
